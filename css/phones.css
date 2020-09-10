@@ -1,0 +1,552 @@
+@media only screen and (min-width: 480px) {
+
+	/* Main division, containing the background image the user will scroll through on the horiontal axis. */
+	/* The transition time and flow ensure a smooth scroll through the pages.*/
+	.main {
+		height: 100vh;
+		width: 100vw;
+		min-height: 540px;
+		background-color: #000;
+		background-image: url('../images/background.jpg');
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: 0%;
+		transition: background-position 1.5s ease-in-out;
+		overflow-y: hidden;
+		overflow-x: hidden;
+	}
+
+	/* Styling for the intro (so called "loading") screen. */
+	.intro {
+		position: fixed;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		width: 100vw;
+		height: 100vh;
+		background-color: #000;
+		z-index: 5;
+		animation: intro-disappear 1s 3.9s forwards;
+		-webkit-animation: intro-disappear 1s 3.9s forwards;
+	}
+
+	.intro img {
+		width: 0;
+		height: 0;
+		animation: monk-arise 0.5s 1s forwards, monk-hover 2s 1s infinite ease-in-out;
+		-webkit-animation: monk-arise 0.5s 1s forwards, monk-hover 2s 1s infinite ease-in-out;
+
+	}
+
+	/* Holds the text which is a part of the introduction animation. */
+	.text-container {
+		display: flex;
+		flex-direction: row;
+	}
+
+	.text-container p {
+		margin-top: 4vh;
+	}
+
+	.beginning-text {
+		font-size: 0;
+		transform: translateX(65px);
+		animation: beginning-text-arise 0.2s 1.5s forwards, text-slide 0.2s 2.2s forwards;
+		-webkit-animation: beginning-text-arise 0.2s 1.5s forwards, text-slide 0.2s 2.2s forwards;
+	}
+
+	.exclamation {
+		font-size: 0;
+		transform: translateX(65px);
+		animation: beginning-text-arise 0.2s 1.5s forwards, text-slide 0.2s 2.2s forwards, exclamation-disappear 0.1s 2.2s forwards;
+		-webkit-animation: beginning-text-arise 0.2s 1.5s forwards, text-slide 0.2s 2.2s forwards, exclamation-disappear 0.1s 2.2s forwards;
+	}
+
+	.comma {
+		opacity: 0;
+		animation: text-slide 0.2s 2.2s forwards, comma-arise 0.1s 2.3s forwards;
+		-webkit-animation: text-slide 0.2s 2.2s forwards, comma-arise 0.1s 2.3s forwards;
+	}
+
+	.remaining-text {
+		opacity: 0;
+		font-size: 1em;
+		margin-left: 6px;
+		animation: text-slide 0.2s 2.2s forwards, text-fade-in 0.2s 2.7s forwards;
+		-webkit-animation: text-slide 0.2s 2.2s forwards, text-fade-in 0.2s 2.7s forwards;
+	}
+
+	/* Styling for the  chapter divisions*/
+	.chapter {
+		width: 100vw;
+		height: 100vh;
+		display: none;
+	}
+
+	/* The current chapter visible. It contains a fade animation for it to smoothly present itself to the user on each scroll. */
+	.current-chapter {
+		display: block;
+		opacity: 0;
+		animation: chapter-fade 0.2s 1.5s forwards;
+		-webkit-animation: chapter-fade 0.2s 1.5s forwards;
+	}
+
+	.final-chapter {
+		animation: chapter-fade 0.1s forwards, final-chapter-slide 1.5s forwards ease-in-out;
+		-webkit-animation: chapter-fade 0.1s forwards, final-chapter-slide 1.5s forwards ease-in-out;
+	}
+
+	.chapter:nth-child(2) .chapter-title {
+		position: absolute;
+		width: 70vw;
+		top: 20px;
+		left: 15vw;
+		text-align: center;
+	}
+
+	.chapter:nth-child(3) .chapter-title,
+	.chapter:nth-child(4) .chapter-title,
+	.chapter:nth-child(8) .chapter-title,
+	.chapter:nth-child(9) .chapter-title,
+	.chapter:nth-child(10) .chapter-title {
+		position: absolute;
+		width: 70vw;
+		top: 38vh;
+		left: 15vw;
+		text-align: center;
+	}
+
+	.chapter:nth-child(5) .chapter-title,
+	.chapter:nth-child(6) .chapter-title,
+	.chapter:nth-child(7) .chapter-title {
+		position: absolute;
+		width: 70vw;
+		top: 38vh;
+		right: 15vw;
+		text-align: center;
+	}
+
+	.chapter:nth-child(11) .chapter-title {
+		position: absolute;
+		width: 450px;
+		top: 20px;
+		right: 30px;
+		text-align: right;
+	}
+
+	.chapter-title h1 {
+		display: inline;
+		font-size: 2.5em;
+		text-transform: uppercase;
+		border-bottom: 1px solid #fff;
+	}
+
+	.chapter-text {
+		position: absolute;
+		width: 80vw;
+		bottom: 100px;
+		left: 30px;
+	}
+
+	.chapter:nth-child(11) .chapter-text {
+		position: absolute;
+		top: 40vh;
+		left: initial;
+		right: 30px;
+		text-align: right;
+	}
+
+	.chapter-text a,
+	.chapter-text a:active,
+	.chapter-text a:visited {
+		color: #fff;
+	}
+
+	.chapter-text a:visited {
+		color: #fff;
+	}
+
+	ul {
+		position: absolute;
+		width: 260px;
+		right: 30px;
+		top: 48vh;
+		list-style-type: none;
+	}
+
+	li {
+		display: inline;
+	}
+
+	li a,
+	li a:active,
+	li a:visited {
+		color: #fff;
+		text-decoration: none;
+	}
+
+	.email,
+	.twitter {
+		width: 6%;
+		height: 6%;
+		margin: 0 8px;
+	}
+
+	.facebook {
+		width: 3.5%;
+		height: 3.5%;
+		margin: 0 8px;
+	}
+
+	/* Styling of the fixed elements, like the MediaMonks logo, */
+	/* navigation menu and  navigation buttons.*/
+	.prev {
+		display: none;
+		position: absolute;
+		width: 50px;
+		height: 50px;
+		top: 40vh;
+		left: 30px;
+		cursor: pointer;
+	}
+
+	.prev:hover {
+		transform: translateX(-5px);
+		transition: transform 0.2s;
+	}
+
+	.prev:hover > .arrow-left {
+		border-color: #939393;
+	}
+
+	.next {
+		display: block;
+		position: absolute;
+		width: 50px;
+		height: 50px;
+		top: 40vh;
+		right: 20px;
+		cursor: pointer;
+	}
+
+	.next:hover {
+		transform: translateX(5px);
+		transition: transform 0.2s;
+	}
+
+	.next:hover > .arrow-right {
+		border-color: #939393;
+	}
+
+	.arrow-left {
+		width: 35px;
+		height: 35px;
+		border-top: 2px solid #fff;
+		border-left: 2px solid #fff;
+		transform: rotate(-45deg);
+	}
+
+	.arrow-right {
+		width: 35px;
+		height: 35px;
+		border-top: 2px solid #fff;
+		border-right: 2px solid #fff;
+		transform: rotate(45deg);
+	}
+
+	nav {
+		display: block;
+		position: absolute;
+		bottom: 20px;
+		left: 30px;
+	}
+
+	table, td {
+		border: 2px dotted #fff;
+		border-collapse: collapse;
+	}
+
+	td {
+		display: table-cell;
+		text-align: center;
+		width: 26px;
+		cursor: pointer;
+	}
+
+	.cell {
+		display: inline-block;
+		vertical-align: middle;
+		width: 22px;
+		height: 16px;
+		margin: 2px 0;
+		font-size: 0.8em;
+	}
+
+	.cell:hover {
+		background-color: #fff;
+	}
+
+	.current-cell {
+		background-color: #fff;
+		transition: background-color 0.5s;
+	}
+
+	.logo {
+		position: absolute;
+		width: 100px;
+		bottom: 20px;
+		right: 30px;
+	}
+
+	/* Animations */
+
+	@keyframes monk-arise {
+		0% {
+			width: 0;
+			height: 0;
+		}
+		25% {
+			width: 0;
+			height: 0;
+		}
+		100% {
+			width: 106px;
+			height: 149px;
+		}
+	}
+
+	@-webkit-keyframes monk-arise {
+		0% {
+			width: 0;
+			height: 0;
+		}
+		25% {
+			width: 0;
+			height: 0;
+		}
+		100% {
+			width: 106px;
+			height: 149px;
+		}
+	}
+
+	@keyframes monk-hover {
+		0% {
+			transform: translateY(0vh);
+		}
+		50% {
+			transform: translateY(-2vh);
+		}
+		100% {
+			transform: translateY(0vh);
+		}
+	}
+
+	@-webkit-keyframes monk-hover {
+		0% {
+			transform: translateY(0vh);
+		}
+		50% {
+			transform: translateY(-2vh);
+		}
+		100% {
+			transform: translateY(0vh);
+		}
+	}
+
+	@keyframes beginning-text-arise {
+		0% {
+			font-size: 0em;
+		}
+		75% {
+			font-size: 1.2em;
+		}
+		100% {
+			font-size: 1em;
+		}
+	}
+
+	@-webkit-keyframes beginning-text-arise {
+		0% {
+			font-size: 0em;
+		}
+		75% {
+			font-size: 1.2em;
+		}
+		100% {
+			font-size: 1em;
+		}
+	}
+
+	@keyframes text-arise {
+		0% {
+			opacity: 0em;
+		}
+		100% {
+			opacity: 1em;
+		}
+	}
+
+	@-webkit-keyframes text-arise {
+		0% {
+			opacity: 0em;
+		}
+		100% {
+			opacity: 1em;
+		}
+	}
+
+	@keyframes text-slide {
+		0% {
+			transform: translateX(65px);
+		}
+		100% {
+			transform: translateX(0);
+		}
+	}
+
+	@-webkit-keyframes text-slide {
+		0% {
+			transform: translateX(65px);
+		}
+		100% {
+			transform: translateX(0);
+		}
+	}
+
+	@keyframes exclamation-disappear{
+		0% {
+			opacity: 1;
+			font-size: 1em
+		}
+		100% {
+			opacity: 0;
+			font-size: 0;
+		}
+	}
+
+	@-webkit-keyframes exclamation-disappear{
+		0% {
+			opacity: 1;
+			font-size: 1em
+		}
+		100% {
+			opacity: 0;
+			font-size: 0;
+		}
+	}
+
+	@keyframes comma-arise {
+		0% {
+			opacity: 0;
+			font-size: 0;
+		}
+		100% {
+			opacity: 1;
+			font-size: 1em;
+		}
+	}
+
+	@-webkit-keyframes comma-arise {
+		0% {
+			opacity: 0;
+			font-size: 0;
+		}
+		100% {
+			opacity: 1;
+			font-size: 1em;
+		}
+	}
+
+	@keyframes text-fade-in {
+		0% {
+			opacity: 0;
+		}
+		100% {
+			opacity: 1;
+		}
+	}
+
+	@-webkit-keyframes text-fade-in {
+		0% {
+			opacity: 0;
+		}
+		100% {
+			opacity: 1;
+		}
+	}
+
+	@keyframes intro-disappear {
+		0% {
+			opacity: 1;
+			width: 100vw;
+			height: 100vh;
+		}
+		99% {
+			opacity: 0;
+			width: 100vw;
+			height: 100vh;
+		}
+		100% {
+			opacity: 0;
+			width: 0;
+			height: 0;
+		}
+	}
+
+	@-webkit-keyframes intro-disappear {
+		0% {
+			opacity: 1;
+			width: 100vw;
+			height: 100vh;
+		}
+		99% {
+			opacity: 0;
+			width: 100vw;
+			height: 100vh;
+		}
+		100% {
+			opacity: 0;
+			width: 0;
+			height: 0;
+		}
+	}
+
+	@keyframes chapter-fade {
+		0% {
+			opacity: 0;
+		}
+		100% {
+			opacity: 1;
+		}
+	}
+
+	@-webkit-keyframes chapter-fade {
+		0% {
+			opacity: 0;
+		}
+		100% {
+			opacity: 1;
+		}
+	}
+
+	@keyframes final-chapter-slide {
+		0% {
+			transform: translateX(100vw);
+		}
+		100% {
+			transform: translateX(0);
+		}
+	}
+
+	@-webkit-keyframes final-chapter-slide {
+		0% {
+			transform: translateX(100vw);
+		}
+		100% {
+			transform: translateX(0);
+		}
+	}
+	
+}
