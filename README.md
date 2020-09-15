@@ -1,6 +1,6 @@
 ## How to be a monk (@MediaMonk) website
- 
-![MediaMonk](https://user-images.githubusercontent.com/63584577/93193805-9f906300-f747-11ea-856d-f8a097813acb.jpeg)
+
+![media-Monk-app-gif](https://github.com/singhnatasha/test/blob/master/MediaMonk.gif)
 
 ### About the project:
  - A web application made using vanilla JS, HTML and CSS where the user can navigate through the panoramic view screens and learn about how to become a monk at MediaMonk.
